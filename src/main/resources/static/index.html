@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- menu -->
+<link href="css/component.css" rel="stylesheet" type="text/css" />
+<!-- //menu -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<!-- //js -->
+<!-- fonts -->
+
+
+
+
+</head>
+<body class="cbp-spmenu-push">
+
+
+	<!-- banner -->
+	<div class="banner">
+		<div class="banner-left">
+			<div class="grid__item wow fadeInDown animated" data-wow-delay=".5s">
+				<h1>
+					<a class="link link--ilin" href="index.html"><span>chat
+					</span><span> boxes</span></a>
+				</h1>
+			</div>
+			<div class="clearfix"></div>
+			<div class="banner-info wow fadeInUp animated" data-wow-delay=".5s">
+				<h3>Have a holly jolly Christmas!</h3>
+				<p>祝你有个愉快的圣诞佳节！.</p>
+			</div>
+			<div class="social-pos wow fadeInDown animated" data-wow-delay=".5s">
+				<ul>
+					<li><a class="ico1" href="#"></a></li>
+					<li><a class="ico2" href="#"></a></li>
+					<li><a class="ico3" href="#"></a></li>
+				</ul>
+			</div>
+			<div class="banner-right wow fadeInRight animated"
+				data-wow-delay=".5s">
+				<div class="banner-text">
+					<h3>Choose Your Login Method</h3>
+					<form method="get" action="javascript:void(0)">
+						<div class="best-hot">
+							<h5>userName</h5>
+							<input  name="userName" type="text" placeholder="Type Here" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Type Here';}"
+								required="">
+						</div>
+						<div class="best-hot">
+							<h5>userPwd</h5>
+							<input name="userPwd" type="text" placeholder="Type Here" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Type Here';}"
+								required="">
+						</div>
+						<input type="submit" value="Book Now">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	
+	$("[type=submit]").click(function(){
+		
+		var userName=$("[name=userName]").val();
+		var userPwd=$("[name=userPwd]").val();
+			if(userName=="" || userPwd==""){
+				return;	
+			}
+		
+		  $.ajax("/c/users/loginIn/"+userName+"/"+userPwd,{
+			type:"get",
+			dataType:"json",
+			success:function(user){
+				if(user!=null){
+					window.location.href="chat.html";
+				}
+			}
+		});  
+	});
+	
+
+	
+</script>
+</html>
