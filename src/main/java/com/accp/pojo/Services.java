@@ -67,7 +67,7 @@ public class Services {
 
     private Float weight;
 
-    private Boolean recommendbool;
+    private int recommendbool;
 
     private Integer shelfstate;
 
@@ -331,11 +331,11 @@ public class Services {
         this.weight = weight;
     }
 
-    public Boolean getRecommendbool() {
+    public int getRecommendbool() {
         return recommendbool;
     }
 
-    public void setRecommendbool(Boolean recommendbool) {
+    public void setRecommendbool(int recommendbool) {
         this.recommendbool = recommendbool;
     }
 
